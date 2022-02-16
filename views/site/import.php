@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-lg-5">
                 <?php $form = ActiveForm::begin(['id' => 'import-form', 'options' => ['enctype' => 'multipart/form-data']]); ?>
 
-                <?= $form->field($model, 'file_to_upload')->fileInput() ?>
+                <?= $form->field($model, 'file')->fileInput() ?>
 
                 <?= $form->field($model, 'types')->dropdownList([
                     "" => '--',

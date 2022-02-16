@@ -16,7 +16,7 @@ class ImportForm extends  Model
     public function rules()
     {
         return [
-            [['file_to_upload'], 'file_to_upload', 'skipOnEmpty' => false, 'extensions' => 'csv'],
+            [['file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'csv'],
             [['types'], 'required'],
         ];
     }

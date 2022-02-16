@@ -65,7 +65,7 @@ class SiteController extends BaseController
         $model= new ImportForm();
         if ($model->load(Yii::$app->request->post())) {
             $arrayToCollectData = [];
-            $model->file = UploadedFile::getInstance($model, 'file_to_upload');
+            $model->file = UploadedFile::getInstance($model, 'file');
             $model->file->saveAs($model->file);
             $handle = fopen($model->file, 'r');
             if($handle){
@@ -83,8 +83,6 @@ class SiteController extends BaseController
                     }
                 }
                 fclose($handle);
-
-
 
                 Yii::$app->db->createCommand()->batchInsert($tableName, $columns, $arrayToCollectData)->execute();
             }
