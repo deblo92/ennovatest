@@ -16,7 +16,7 @@ class ImportForm extends  Model
     public function rules()
     {
         return [
-            [['file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'csv'],
+            [['file_to_upload'], 'file_to_upload', 'skipOnEmpty' => false, 'extensions' => 'csv'],
             [['types'], 'required'],
         ];
     }
@@ -27,8 +27,8 @@ class ImportForm extends  Model
     public function attributeLabels()
     {
         return array(
-            'file' => 'Select file',
-            'types' => 'Tipologia file da importare',
+            'file_to_upload' => 'Select file_to_upload',
+            'types' => 'Tipologia file_to_upload da importare',
         );
     }
 }
